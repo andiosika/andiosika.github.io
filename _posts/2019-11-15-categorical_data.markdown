@@ -12,15 +12,20 @@ Yes… back to zipcodes.   In this project, I was stuck on this one.  It was num
 There are different ways one can go about label-encoding for predictive modeling.  
 One way is to pass .cat.codes through your feature that assigns a numeric value to your numeric, text or even photographic category:
 
-'0      feat2
+```
+feature
+
+0      feat2
 1      feat1
 2      feat1
 3      feat0
 4      feat2
 5      feat1
 6      feat1
-dtype: category'
+dtype: category
+```
 
+```
 feature.cat.codes
 OUTPUT:
 0    2
@@ -34,24 +39,32 @@ OUTPUT:
 8    0
 9    2
 dtype: int8  
+```
 
 See?  It's now an integer that relates back to the feature.
 
 Another way is to use the scikitlearn’s  LabelEncoder:
 First import, then encatonate, then call fit_transform  to feature you’re encoding.  
+It looks like this:
 
+```
 from sklearn.preprocessing import LabelEncoder
 encode = LabelEncoder()
 feature_encoded = encode.fit_transform(cat_feature)
+```
 
 
+```
 feature_encoded
+
 array([2, 1, 1, 0, 2, 1, 1, 0, 0, 2])
+```
 
 
 Or you can do this another way, by getting “dummy variables” from pandas:
 
-pd.get_dummies(cat_origin)
+```
+pd.get_dummies(cat_Val)
 
 	Val1	Val2	Val3
 0	0	0	1
@@ -64,6 +77,7 @@ pd.get_dummies(cat_origin)
 7	1	0	0
 8	1	0	0
 9	0	0	1
+```
 
 The advantage of using dummies is that, whatever algorithm you'll be using, your numerical values cannot be misinterpreted as being continuous. Going forward, it's important to know that for linear regression (and most other algorithms in scikit-learn), one-hot encoding is required when adding categorical variables in a regression model.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Categorical Data "
-date:       2019-11-15 18:15:44 +0000
+date:       2019-11-15 13:15:45 -0500
 permalink:  categorical_data
 ---
 
@@ -12,14 +12,14 @@ Yes… back to zipcodes.   In this project, I was stuck on this one.  It was num
 There are different ways one can go about label-encoding for predictive modeling.  
 One way is to pass .cat.codes through your feature that assigns a numeric value to your numeric, text or even photographic category:
 
-0      feat2
+'0      feat2
 1      feat1
 2      feat1
 3      feat0
 4      feat2
 5      feat1
 6      feat1
-dtype: category
+dtype: category'
 
 feature.cat.codes
 OUTPUT:

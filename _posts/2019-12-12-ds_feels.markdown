@@ -13,6 +13,6 @@ The first couple of weeks I felt completely overwhelmed.  Like - really overwhel
 I had talked to a copule of other students who were ahead of me who shared that when they began they felt the same, and in talking to my ed coach - she assured me that I wasn't alone in these feelings.  Being a bit of a data nerd, and perhaps I am a data scientist at heart - I began to plot how I felt daily on a scale from 0-5.  0 = quitting.  5 = YES! I made the right choice! I love this!   I reasonded that if there were enough 0's I would have made an informed decision using data.  
 Below is my chart.  The data speaks for itself.  My advice to anyone struggling. Keep showing up and give it an honest effort. Pay attention.  Communicate - with your instructor, ed coach, cohort - stay connected. Learn strategies.  Then  see for yourself:
 <br>
-<img src="https://raw.githubusercontent.com/andiosika/andiosika.github.io/master/img/DS%20Feels%20Image.png" ,width="80%",style="text-align:center;">
+<img src="https://raw.githubusercontent.com/andiosika/andiosika.github.io/master/img/DS%20Feels%20Image.png" ,width="80%",style="text-align:center;" /img>
 
 

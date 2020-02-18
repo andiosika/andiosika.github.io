@@ -1,7 +1,7 @@
 ---
 layout: post
-title:      "Statistics Hypothesis Testing Alert : Not all data is created nomal. "
-date:       2020-02-18 02:56:55 +0000
+title:      "Statistical Hypothesis Testing Alert : Not all data is created normal. "
+date:       2020-02-17 21:56:56 -0500
 permalink:  statistics_hypothesis_testing_alert_not_all_data_is_created_nomal
 ---
 

@@ -31,12 +31,13 @@ Reasons to use non-parametric tests:
 
 Non parametric tests will use the median as one way to determine if the sample is unusual.  Below is a summary table that outlines at a high level the various test options.  The first row illustrates one-sample tests, the second - is for comparing two samples , and the third row - for three or more samples to be compared.
 
-**Summary Table - Hypothesis Testing Functions:**
-Parametric tests (means)|	Function|	Nonparametric tests (medians) | 	Function
-|--- | --- | ---| ---|
-1-sample t test	\ scipy.stats.ttest_1samp()	| 1-sample Wilcoxon	| scipy.stats.wilcoxon
-2-sample t test	| scipy.stats.ttest_ind()	|Mann-Whitney U test|	scipy.stats.mannwhitneyu()|
-One-Way ANOVA|	scipy.stats.f_oneway()	|Kruskal-Wallis|	scipy.stats.kruskal
+## Summary Table - Hypothesis Testing Functions:
+
+Parametric tests (means) | Function | Nonparametric tests (medians) |  Function 
+--| --| --| --|
+1-sample t test | scipy.stats.ttest_1samp() | 1-sample Wilcoxon | scipy.stats.wilcoxon()
+2-sample t test | scipy.stats.ttest_ind()   |Mann-Whitney U test| scipy.stats.mannwhitneyu() 
+One-Way ANOVA   | scipy.stats.f_oneway()    |Kruskal-Wallis      | scipy.stats.kruskal()
 
 
 Post-hoc testing like a [Cohen's d](http://https://www.socscistatistics.com/effectsize/default3.aspx) can further assess the effect size and I've found, prove additional efficacy of hypotheis testing.

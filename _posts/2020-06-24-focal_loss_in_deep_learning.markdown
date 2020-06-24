@@ -1,13 +1,9 @@
 ---
 layout: post
 title:      "Focal Loss in Deep Learning "
-date:       2020-06-24 22:59:27 +0000
+date:       2020-06-24 18:59:27 -0400
 permalink:  focal_loss_in_deep_learning
 ---
-
-
-https://medium.com/ai-salon/demystifying-focal-loss-i-a-more-focused-version-of-cross-entropy-loss-f49e4b044213
-https://leimao.github.io/blog/Focal-Loss-Explained/
 
 
 When using machine learning to identify patterns in order predictions and your model yields  an accuracy rate of 99% you are feeling really confident .  Except... when in only 1% of the samples you've used to train your model reflects the one thing you're trying to classify... the target.  That 99% accuracy the model is touting is it's ability to identify the samples that are not the target.  Imbalance happens... and in this case.. despite your high accuracy... your model sucks.
@@ -35,3 +31,7 @@ focal loss = α * loss * (1 - logit) ** γ
 the alpha is multiplied by the loss, then by the value of 1-the log raised to the power of gamma.
 
 I discoved focal loss when working with a dataset with severely imbalanced target classes in a deep neural network.  Since the project was transforming and creating equal sized vectors from text language that was converted into numeric states, SMOTING was not a realisict option.  I have not had susscess with under or over sampling.  So when I ran into a case where I had a recall of 0 in EVERY other model, I was able to achieve a 39% recall - which isn't great, but in a case where the ratio was close to 1000:1 and yeilding a goose-egg, 39% showed promise... heck - it was a 39% increase! 
+
+Further reading:
+
+https://pypi.org/project/focal-loss/

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Focal Loss in Deep Learning "
+title:      "Focal Loss in Deep Learning: Addressing Deep Imbalance"
 date:       2020-06-24 18:59:27 -0400
 permalink:  focal_loss_in_deep_learning
 ---

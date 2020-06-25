@@ -6,7 +6,7 @@ permalink:  focal_loss_in_deep_learning
 ---
 
 
-When using machine learning to identify patterns in order predictions and your model yields  an accuracy rate of 99% you are feeling really confident .  Except... when in only 1% of the samples you've used to train your model reflects the one thing you're trying to classify... the target.  That 99% accuracy the model is touting is it's ability to identify the samples that are not the target.  Imbalance happens... and in this case.. despite your high accuracy... your model sucks.
+When using machine learning to identify patterns in order to make predictions and your model yields  an accuracy rate of 99% you are feeling really confident .  Except... when in only 1% of the samples you've used to train your model reflects the one thing you're trying to classify... the target.  That 99% accuracy the model is touting is it's ability to identify the samples that are not the target.  Imbalance happens... and in this case.. despite your high accuracy... your model sucks.
 
 So back to machines ....and how they learn.  Machines learning occurs by means of what's called a  loss function. It's a method of evaluating how well a specific algorithm models the given data. Predictions are made and compared to actual data points. The loss is the difference.  If predictions deviate too much from actual results, loss function would cough up a very large number and vice- versa... so the smaller the loss, the better the model.   'get it?  
 

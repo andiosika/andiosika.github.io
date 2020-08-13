@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "LDA Latent Dirichlet Allocation:"
-date:       2020-08-13 22:45:22 +0000
+date:       2020-08-13 18:45:23 -0400
 permalink:  lda_latent_dirichlet_allocation
 ---
 
@@ -99,13 +99,14 @@ coherence_model_lda = CoherenceModel(model=lda_model_pos, texts=pos_list_of_list
 coherence_lda = coherence_model_lda.get_coherence()
 print('\nCoherence Score: ', coherence_lda)
 ```
-coherence scores of .1-.4 are low, .5 is ok, .6-.7 are about as good as you can get and .8-.9 are just plain unlikely.  For the record, mine was ok: .52  'not bad for a first timer.  I'll continue to tweak it.
+
+Coherence scores of .1-.4 are low, .5 is ok, .6-.7 are about as good as you can get and .8-.9 are just plain unlikely.  For the record, mine was ok: .52  'not bad for a first timer.  I'll continue to tweak it.
 
 Note that both procedures are considered unsupervised learning and far from being perfect, no matter how impressing the results may look at first sight. LDA helped me understand what the topics were with words leading the way.  The interactive tool helped me to explain it to others. Which is what I was looking for.
 
 
 More reading: 
 http://mirror.aclweb.org/acl2014/W14-31/pdf/W14-3110.pdf
-https://towardsdatascience.com/evaluate-topic-model-in-python-latent-dirichlet-allocation-lda-7d57484bb5d0
+http://vis.stanford.edu/files/2012-Termite-AVI.pdf
 
 

@@ -9,7 +9,7 @@ When you’re reading an article, review, or book, extracting meaning is the poi
 
 Enter: **Latent Dirichlet Allocation or LDA**.  The model takes in a dictionary of words – or all the words used across several documents or in a specific case for my most recent project, customer reviews for the top five health and wellness apps.     
 
-I took ten thousand from each – fifty thousand of the most relevant reviews using google play scraper.  Five and one star reviews were most frequent confirming they were the most insightful of the most relevant.  I classified content as ‘good’ if it was assigned a 5 star review, ‘bad’ if it was a 1 star review, and ‘neutral’ if it received 2-4 stars and began to dig deeper into the content of ‘good’ and ‘bad’ reviews.  In each of these classes, I removed adjectives that didn’t tell me much like “awesome” or “rubbish” and began some cluster analysis using [KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) to “see” if I could notice trends.  I struggled.  
+I took ten thousand from each – fifty thousand of the most relevant reviews using [google play scraper](https://pypi.org/project/google-play-scraper/).  Five and one star reviews were most frequent confirming they were the most insightful of the most relevant.  I classified content as ‘good’ if it was assigned a 5 star review, ‘bad’ if it was a 1 star review, and ‘neutral’ if it received 2-4 stars and began to dig deeper into the content of ‘good’ and ‘bad’ reviews.  In each of these classes, I removed adjectives that didn’t tell me much in terms of real product insight like “awesome” or “rubbish” and began some cluster analysis using traditional segmentation using [KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) to “see” if I could notice trends.  I struggled.  
 
 KMeans seemed limiting since:
 
@@ -27,7 +27,7 @@ It has two main components:
 
 2.	the [distribution of the] number of topics per document is handled by **alpha**.  When lambda equals one – we can see where terms land solely using probability.  A lower lambda distributes the probability mass on a few topics for each document.
 
-In my project, I created a list of lists... or my 'documents' from the content field of my dataframe.  This contained the reviews that had been pre-processed.  I took out stopwords, removed punctuation and lemmatized them in addition to taking out those adjectives I talked about before.  
+In my project, I created a list of lists... or my 'documents' from the content field of my dataframe for 'good' review content.  This contained the reviews that had been pre-processed.  I took out stopwords, removed punctuation and lemmatized them in addition to taking out those adjectives I talked about before.  
 ```
 
 #for LDA.Dictionary we need a list of list of tokens:

@@ -7,9 +7,9 @@ permalink:  lda_latent_dirichlet_allocation
 
 When you’re reading an article, review, or book, extracting meaning is the point.  But when you must read thousands and thousands of articles, reviews, or books extracting meaning becomes a bit of a challenge.  It can be overwhelming to consider extracting and cataloging and tagging topics while reading, especially considering that some words can overlap topics.  Sometimes words that can help classify a review as a five or one star are useless in telling you what you’re doing right or wrong. 
 
-Enter: **Latent Dirichlet Allocation or LDA**.  The model takes in a dictionary of words – or all the words used across several documents or in a specific case for my most recent project, customer reviews for the top five health and wellness apps.     
+Enter: **Latent Dirichlet Allocation or LDA**.  The model takes in a dictionary of words – or all the words used across multiple documents or in my case - thousands of customer reviews for the top five health and wellness apps.  I wanted to know what people were saying was so great or not so great about these apps after a vistit to  [App Annie](https://www.appannie.com/en/apps/google-play/top/united-states/health-and-fitness/).
 
-I took ten thousand from each – fifty thousand of the most relevant reviews using [google play scraper](https://pypi.org/project/google-play-scraper/).  Five and one star reviews were most frequent confirming they were the most insightful of the most relevant.  I classified content as ‘good’ if it was assigned a 5 star review, ‘bad’ if it was a 1 star review, and ‘neutral’ if it received 2-4 stars and began to dig deeper into the content of ‘good’ and ‘bad’ reviews.  In each of these classes, I removed adjectives that didn’t tell me much in terms of real product insight like “awesome” or “rubbish” and began some cluster analysis using traditional segmentation using [KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) to “see” if I could notice trends.  I struggled.  
+I took ten thousand from each – fifty thousand of the most relevant reviews using [google play scraper](https://pypi.org/project/google-play-scraper/).  Five and one star reviews were most frequent -  this made sense since they were the most insightful of the most relevant.  I classified content as ‘good’ if it was assigned a 5 star review, ‘bad’ if it was a 1 star review, and ‘neutral’ if it received 2-4 stars and began to dig deeper into the content of ‘good’ and ‘bad’ reviews.  In each of these classes, I removed adjectives that didn’t tell me much in terms of real product insight like “awesome” or “rubbish” and began some cluster analysis using traditional segmentation using [KMeans](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) to “see” if I could notice trends.  I struggled.  
 
 KMeans seemed limiting since:
 
@@ -17,8 +17,7 @@ KMeans seemed limiting since:
 
 2)Also – visualizing them and explaining results to others is equally as challenge.  The options are either barcharts or word clouds for term probabilities for each topic.  Pie charts could theoretically be implemented based on word frequency and scatterplots could inform metadata.   Viewing the terms in how they related to each other along with relevance and topic exclusivity the degree to which its occurrences seemed daunting. 
 
-Re-enter LDA: genism has a tool they’ve developed to answer my prayers for this project.  Check it out: 
-https://pyldavis.readthedocs.io/en/latest/modules/API.html
+Re-enter LDA: genism has a tool they’ve developed to answer my prayers for this project.  [Check it out:](https://pyldavis.readthedocs.io/en/latest/modules/API.html)
 
 LDA or topic modeling gives you a probabilistic composition of the document using the dictionary. In addition, it gives you topics that are probability distributions over words. This model is a mixture model – it considers that there are subpopulations in an overall population without requiring an observed dataset belong to the same subpopulation to which the individual observation belongs to.  – challenge number 1 addressed.
 
@@ -27,7 +26,7 @@ It has two main components:
 
 2.	the [distribution of the] number of topics per document is handled by **alpha**.  When lambda equals one – we can see where terms land solely using probability.  A lower lambda distributes the probability mass on a few topics for each document.
 
-In my project, I created a list of lists... or my 'documents' from the content field of my dataframe for 'good' review content.  This contained the reviews that had been pre-processed.  I took out stopwords, removed punctuation and lemmatized them in addition to taking out those adjectives I talked about before.  
+In my project, I created a list of lists... my 'documents' were the 'content' field of my dataframe for the good reviews.  This contained the text data of reviews that had been pre-processed.  I took out stopwords, removed punctuation and [lemmatized](https://www.dictionary.com/browse/lemmatize?s=t) them in addition to taking out those adjectives I talked about before.  
 ```
 
 #for LDA.Dictionary we need a list of list of tokens:

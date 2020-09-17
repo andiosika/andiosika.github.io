@@ -70,7 +70,7 @@ for i,topic in lda_model.show_topics(formatted=True, num_topics=num_topics, num_
 
 which rendered :
 
-<img src='https://github.com/andiosika/Flatiron_Capstone/blob/master/images/neg_term_probs_example.PNG' 
+<img src="https://github.com/andiosika/Flatiron_Capstone/blob/master/images/neg_term_probs_example.PNG"
 size=40%, alignment=left>
 
 Then... the magic: 

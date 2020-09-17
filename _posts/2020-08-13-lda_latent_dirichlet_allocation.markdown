@@ -30,12 +30,12 @@ In my project, I created a list of lists... my 'documents' were the 'content' fi
 ```
 
 #for LDA.Dictionary we need a list of list of tokens:
-list_of_lists = []
+neg_list_of_lists = []
 
 for row in df['content']:
-    pos_list_of_lists.append(row)
+    neg_list_of_lists.append(row)
     
-pos_list_of_lists
+neg_list_of_lists
 ```
 
 Then I began to build my model.  These are tough to reproduce exactly the same each time, but setting a random seed helps.  I bumped up my eta in hopes to form topics being more similar in terms of what words they contain.
@@ -48,7 +48,7 @@ Then I began to build my model.  These are tough to reproduce exactly the same e
 # #creating the corpus:
 # dictionary_LDA = corpora.Dictionary(list_of_lists)
 # dictionary_LDA.filter_extremes(no_below=3)
-# corpus = [dictionary_LDA.doc2bow(list_of_tokens) for list_of_tokens in list_of_lists]
+# corpus = [dictionary_LDA.doc2bow(list_of_tokens) for list_of_tokens in neg_list_of_lists]
 
 # #as indicated by elbowplot:
 # num_topics = 5
@@ -70,7 +70,7 @@ for i,topic in lda_model.show_topics(formatted=True, num_topics=num_topics, num_
 
 which rendered :
 
-<img src="https://github.com/andiosika/Flatiron_Capstone/blob/master/images/neg_term_probs_example.PNG"
+<img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/neg_term_probs_example.PNG"
 size=40%, alignment=left>
 
 Then... the magic: 
@@ -86,7 +86,7 @@ Then... the magic:
 ```
 
 Which rendered something like this:
-<img src="https://github.com/andiosika/Flatiron_Capstone/blob/master/images/pos_visual.PNG" size=40%, alignment=center>
+<img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/pos_visual.PNG" size=40%, alignment=center>
 
 Placement occurs via multidimensional scaling onto a 2d plot using Principal Compnent Analysis or [PCA](https://setosa.io/ev/principal-component-analysis/).  They are are ordered by the percentage of variability they explain. PC1 on the x-axis always explains more variability among the samples included in the test. PC2 is the second axes expalaining more variability.
 

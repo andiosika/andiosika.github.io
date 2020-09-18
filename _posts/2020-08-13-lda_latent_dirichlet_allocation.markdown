@@ -40,23 +40,23 @@ neg_list_of_lists
 
 Then I began to build my model.  These are tough to reproduce exactly the same each time, but setting a random seed helps.  I bumped up my eta in hopes to form topics being more similar in terms of what words they contain.
 ```
-# from gensim import corpora, models
+from gensim import corpora, models
 
-# np.random.seed(41)
+np.random.seed(41)
 
-# #instantiating the Dictionary, pulling out the words that occur less than 3 times and 
-# #creating the corpus:
-# dictionary_LDA = corpora.Dictionary(list_of_lists)
-# dictionary_LDA.filter_extremes(no_below=3)
-# corpus = [dictionary_LDA.doc2bow(list_of_tokens) for list_of_tokens in neg_list_of_lists]
+#instantiating the Dictionary, pulling out the words that occur less than 3 times and 
+#creating the corpus:
+dictionary_LDA = corpora.Dictionary(list_of_lists)
+dictionary_LDA.filter_extremes(no_below=3)
+corpus = [dictionary_LDA.doc2bow(list_of_tokens) for list_of_tokens in neg_list_of_lists]
 
-# #as indicated by elbowplot:
-# num_topics = 5
-# #instantiating the model
-# %time lda_model = models.LdaModel(corpus, num_topics=num_topics, \
-#                                   id2word=dictionary_LDA, \
-#                                   passes=10, alpha=[0.1]*num_topics, \
-#                                   eta=[0.5]*len(dictionary_LDA.keys()))
+#as indicated by elbowplot:
+num_topics = 5
+#instantiating the model
+%time lda_model = models.LdaModel(corpus, num_topics=num_topics, \
+                                  id2word=dictionary_LDA, \
+                                   passes=10, alpha=[0.1]*num_topics, \
+                                   eta=[0.5]*len(dictionary_LDA.keys()))
 ```
 This gave me my model.  From there, I just wanted to get an idea of what the topics looked like.
 
@@ -75,17 +75,18 @@ which rendered :
 
 Then... the magic: 
 ```
-# #code for instaciating and visualizing interactive lda model:
-# np.random.seed(41)
-# %matplotlib inline
-# import pyLDAvis
-# import pyLDAvis.gensim
-# %time vis = pyLDAvis.gensim.prepare(topic_model=lda_model, corpus=corpus, dictionary=dictionary_LDA)
-# pyLDAvis.enable_notebook()
-# %time pyLDAvis.display(vis)
+#code for instaciating and visualizing interactive lda model:
+np.random.seed(41)
+%matplotlib inline
+import pyLDAvis
+import pyLDAvis.gensim
+%time vis = pyLDAvis.gensim.prepare(topic_model=lda_model, corpus=corpus, dictionary=dictionary_LDA)
+pyLDAvis.enable_notebook()
+%time pyLDAvis.display(vis)
 ```
 
 Which rendered something like this:
+<p><img alt="" src="/img/pos_visual.PNG" size=40% alignment = center /></p>
 <img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/pos_visual.PNG" size=40% alignment=center>
 
 Placement occurs via multidimensional scaling onto a 2d plot using Principal Compnent Analysis or [PCA](https://setosa.io/ev/principal-component-analysis/).  They are are ordered by the percentage of variability they explain. PC1 on the x-axis always explains more variability among the samples included in the test. PC2 is the second axes expalaining more variability.

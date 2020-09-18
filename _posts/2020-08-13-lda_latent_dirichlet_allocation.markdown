@@ -86,7 +86,7 @@ pyLDAvis.enable_notebook()
 ```
 
 Which rendered something like this:
-<img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/pos_visual.png" size="40%" alignment="center">
+<img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/pos_visual.PNG" size="40%" alignment="center">
 
 Placement occurs via multidimensional scaling onto a 2d plot using Principal Compnent Analysis or [PCA](https://setosa.io/ev/principal-component-analysis/).  They are are ordered by the percentage of variability they explain. PC1 on the x-axis always explains more variability among the samples included in the test. PC2 is the second axes expalaining more variability.
 

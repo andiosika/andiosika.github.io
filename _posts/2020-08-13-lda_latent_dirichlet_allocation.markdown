@@ -109,6 +109,7 @@ Note that both procedures are considered unsupervised learning and far from bein
 
 More reading: 
 http://mirror.aclweb.org/acl2014/W14-31/pdf/W14-3110.pdf
+
 http://vis.stanford.edu/files/2012-Termite-AVI.pdf
 
 

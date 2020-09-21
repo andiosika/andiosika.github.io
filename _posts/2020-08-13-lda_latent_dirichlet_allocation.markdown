@@ -69,7 +69,7 @@ for i,topic in lda_model.show_topics(formatted=True, num_topics=num_topics, num_
 ```
 
 which rendered :
-<img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/neg_term_probs_example.jpg" size="40%" alignment="center">
+<img src="https://res.cloudinary.com/dzko277zb/image/upload/v1600720006/neg_term_probs_example_wpdgfb.jpg" size="40%" alignment="center">
 
 
 Then... the magic: 
@@ -85,11 +85,11 @@ pyLDAvis.enable_notebook()
 ```
 
 Which rendered something like this:
-<img src="https://github.com/andiosika/andiosika.github.io/blob/master/img/pos_visual.png" size="40%" alignment="center">
+<img src="https://res.cloudinary.com/dzko277zb/image/upload/v1600720020/pos_visual_pyfykk.png" size="40%" alignment="center">
 
 Placement occurs via multidimensional scaling onto a 2d plot using Principal Compnent Analysis or [PCA](https://setosa.io/ev/principal-component-analysis/).  They are are ordered by the percentage of variability they explain. PC1 on the x-axis always explains more variability among the samples included in the test. PC2 is the second axes expalaining more variability.
 
-As this plot is created, topics appear as bubbles.  The centers are determined by figuring the distance bewteen topics, then using multi-dimentional scaling.  The bigger the bubble, the more frequent the topic across the corpus – informing the users which topics are most frequently talked about.  By clicking on each bubble, a list of the most relevant words in each topic appear in the right panel and are determiend by their frquency as well as their occurance accross the corpus.  
+As this plot is created, topics appear as bubbles.  The centers are determined by figuring the distance bewteen topics, then using multi-dimentional scaling.  The bigger the bubble, the more frequent the topic across the corpus – informing the users which topics are most frequently talked about.  What's more: It's interactive! By clicking on each bubble, a list of the most relevant words in each topic appear in the right panel and are determiend by their frquency as well as their occurance accross the corpus.  
 
 While sensible topics are created, a common issue is 'junk' topics or topics that don't seem coherent.  Model outputs need to be verified by subject matter experts and modified accordingly.   This can be also be tuned via trial and error or by using  a [coherence score](https://radimrehurek.com/gensim/models/coherencemodel.html): 
 ```
